@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/amirziai/flatten.svg?branch=master)](https://travis-ci.org/amirziai/flatten)
+
 # cse6242-project
 Georgia Tech CSE6242 Team 14 Project, interactive document clustering
 
