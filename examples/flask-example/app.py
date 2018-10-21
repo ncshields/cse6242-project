@@ -39,3 +39,7 @@ def split_topics():
     if topic1 == None or topic2 == None:
     	raise InvalidUsage('provide both topic1 and topic2')
     return "spliting " + topic1 + " " + topic2
+
+# Start a development server
+if __name__ == '__main__':
+    app.run(debug=True)
