@@ -10,4 +10,3 @@ Get started with [sample1.ipynb](sample1.ipynb)
 - create a test module
 - create a module for each function 
 
-...
