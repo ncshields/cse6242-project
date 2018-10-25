@@ -57,7 +57,7 @@ def merge_topics():
 		raise InvalidUsage('provide both topic1 and topic2')
 	return "merging " + topic1 + " " + topic2
 
-@app.route('/split', methods=['POST'])
+@app.route('/api/split', methods=['POST'])
 def split_topics():
 	"""
     This is an api to split two topics
