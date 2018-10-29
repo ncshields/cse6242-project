@@ -24,6 +24,44 @@ def handle_invalid_usage(error):
     response.status_code = error.status_code
     return response
 
+@app.route('/api/cluster-terms', methods=['POST'])
+def post():
+    """
+    This is an api that consumes list of cluster terms
+    Call this api passing `cluster_terms` lists of terms
+    ---
+    tags:
+      - Consume lists of terms
+    parameters:
+      - name: cluster_terms
+        in: body
+        required: true
+        description: Modified lists for terms
+        schema:
+          id: Cluter terms
+          required:
+            - cluster_terms
+          properties:
+            cluster_terms:
+              type: array
+              description: The new terms list.
+              default: Empty list
+              example: [["hello", "world"], ["new", "terms", "here"]]
+    responses:
+      400:
+        description: Validation issue. cluster_terms was not provided
+      500:
+        description: Internal server error
+      200:
+        description: Post was successful
+    """
+    request_body = request.json
+    if 'cluster_terms' not in request_body:
+        raise InvalidUsage('provide a value for cluster_terms')
+
+    cluster_terms = request_body['cluster_terms']
+    return jsonify(cluster_terms)
+
 @app.route('/api/merge', methods=['POST'])
 def merge_topics():
 	"""
